@@ -97,21 +97,21 @@ class FoodController extends Controller
             DB::commit();
 
             return redirect()->route('admin.foods.index')
-                ->with('success', 'Food item created successfully.');
+                ->with('success', 'Product item created successfully.');
         } catch (\Exception $e) {
             DB::rollBack();
             logger($e->getMessage());
             if (isset($validated['image_path'])) {
                 Storage::disk('public')->delete($validated['image_path']);
             }
-            return back()->with('error', 'Error creating food item. Please try again.');
+            return back()->with('error', 'Error creating Product item. Please try again.');
         }
     }
 
     public function edit(Food $food)
     {
         return Inertia::render('Admin/Foods/Form', [
-            'food' => $food->load('extraOptions'),
+            'Product' => $food->load('extraOptions'),
             'categories' => Category::select('id', 'name')->get(),
             'branches' => Branch::select('id', 'name')->get()
         ]);
@@ -165,13 +165,13 @@ class FoodController extends Controller
             DB::commit();
 
             return redirect()->route('admin.foods.index')
-                ->with('success', 'Food item updated successfully.');
+                ->with('success', 'Product item updated successfully.');
         } catch (\Exception $e) {
             DB::rollBack();
             if (isset($validated['image_path'])) {
                 Storage::disk('public')->delete($validated['image_path']);
             }
-            return back()->with('error', 'Error updating food item. Please try again.');
+            return back()->with('error', 'Error updating Product item. Please try again.');
         }
     }
 
@@ -190,17 +190,17 @@ class FoodController extends Controller
 
             DB::commit();
 
-            return back()->with('success', 'Food item deleted successfully.');
+            return back()->with('success', 'Product item deleted successfully.');
         } catch (\Exception $e) {
             DB::rollBack();
             logger($e->getMessage());
-            return back()->with('error', 'Error deleting food item. Please try again.');
+            return back()->with('error', 'Error deleting Product item. Please try again.');
         }
     }
 
     public function updateStatus(Food $food)
     {
         $food->update(['is_available' => !$food->is_available]);
-        return back()->with('success', 'Food availability updated successfully.');
+        return back()->with('success', 'Product availability updated successfully.');
     }
 }

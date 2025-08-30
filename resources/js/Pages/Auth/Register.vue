@@ -40,11 +40,39 @@
           <form @submit.prevent="submit" class="space-y-6">
             <!-- Name -->
             <div>
+              <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Name</label>
+              <input id="name" v-model="form.name" type="text" required
+                class="mt-1 block w-full rounded-lg border-gray-300 dark:border-gray-700 shadow-sm focus:ring-2 focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-800 dark:text-white"
+                :class="{ 'border-red-500': form.errors.name }" />
+              <div v-if="form.errors.name" class="mt-1 text-sm text-red-600 dark:text-red-400">{{ form.errors.name }}
+              </div>
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
+              <input id="email" v-model="form.email" type="text" required
+                class="mt-1 block w-full rounded-lg border-gray-300 dark:border-gray-700 shadow-sm focus:ring-2 focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-800 dark:text-white"
+                :class="{ 'border-red-500': form.errors.email }" />
+              <div v-if="form.errors.email" class="mt-1 text-sm text-red-600 dark:text-red-400">{{ form.errors.email }}
+              </div>
+            </div>
+
+            <div>
               <label for="phone" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Phone</label>
               <input id="phone" v-model="form.phone" type="text" required
                 class="mt-1 block w-full rounded-lg border-gray-300 dark:border-gray-700 shadow-sm focus:ring-2 focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-800 dark:text-white"
                 :class="{ 'border-red-500': form.errors.phone }" />
               <div v-if="form.errors.phone" class="mt-1 text-sm text-red-600 dark:text-red-400">{{ form.errors.phone }}
+              </div>
+            </div>
+
+            <div>
+              <label for="company" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Company</label>
+              <input id="company" v-model="form.company" type="text" required
+                class="mt-1 block w-full rounded-lg border-gray-300 dark:border-gray-700 shadow-sm focus:ring-2 focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-800 dark:text-white"
+                :class="{ 'border-red-500': form.errors.company }" />
+              <div v-if="form.errors.company" class="mt-1 text-sm text-red-600 dark:text-red-400">{{ form.errors.company
+              }}
               </div>
             </div>
             <!-- Password -->
@@ -117,6 +145,9 @@ import { Link, useForm } from "@inertiajs/vue3";
 const showPassword = ref(false);
 
 const form = useForm({
+  name: '',
+  email: '',
+  company: '',
   phone: "",
   password: "",
   password_confirmation: "",

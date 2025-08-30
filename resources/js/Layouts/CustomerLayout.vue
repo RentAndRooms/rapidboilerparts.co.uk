@@ -54,7 +54,7 @@
                 <button @click="showProfileMenu = !showProfileMenu" class="flex items-center space-x-2">
                   <div class="h-8 w-8 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
                     <span class="text-sm font-medium text-gray-600 dark:text-gray-300">{{ auth.user?.name?.charAt(0)
-                      }}</span>
+                    }}</span>
                   </div>
                 </button>
 

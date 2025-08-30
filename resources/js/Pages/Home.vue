@@ -1,6 +1,42 @@
 <template>
   <CustomerLayout>
-    <!-- Hero Section -->
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+
+      <!-- Single Product Card -->
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition p-4 flex flex-col">
+        <img src="https://via.placeholder.com/300x200" alt="Product" class="rounded-xl object-cover h-48 w-full">
+
+        <div class="mt-4 flex-1">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Nike Air Max</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400">Brand: Nike</p>
+        </div>
+
+        <div class="mt-4 flex items-center justify-between">
+          <span class="text-xl font-bold text-indigo-600">$120</span>
+          <button class="px-4 py-2 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 transition">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <!-- Another Product -->
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition p-4 flex flex-col">
+        <img src="https://via.placeholder.com/300x200" alt="Product" class="rounded-xl object-cover h-48 w-full">
+
+        <div class="mt-4 flex-1">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Adidas Ultraboost</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400">Brand: Adidas</p>
+        </div>
+
+        <div class="mt-4 flex items-center justify-between">
+          <span class="text-xl font-bold text-indigo-600">$140</span>
+          <button class="px-4 py-2 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 transition">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+    </div>
   </CustomerLayout>
 </template>
 

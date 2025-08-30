@@ -97,13 +97,13 @@ const form = useForm({
 // Form submission
 const submit = () => {
     if (props.service) {
-        form.put(route("admin.packages.update", props.service.id), {
+        form.put(route("admin.package.update", props.service.id), {
             onSuccess: () => {
                 form.clearErrors();
             },
         });
     } else {
-        form.post(route("admin.packages.store"), {
+        form.post(route("admin.package.create"), {
             onSuccess: () => {
                 form.reset();
             },

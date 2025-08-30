@@ -15,7 +15,7 @@
           <div class="text-white">
             <h1 class="text-4xl font-bold">Welcome to Rapidboilerparts</h1>
             <p class="mt-4 text-lg text-white/90">
-              Experience the finest food delivery service in your area
+              Experience the finest boilerparts delivery service in your area
             </p>
           </div>
         </div>
@@ -49,13 +49,13 @@
           <form @submit.prevent="submit" class="space-y-6">
             <div>
               <label for="phone" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                Phone Number
+                Email
               </label>
-              <input id="phone" v-model="form.phone" type="text" placeholder="Enter phone Number" required
+              <input id="phone" v-model="form.email" type="text" placeholder="Enter email" required
                 class="mt-1 block w-full rounded-lg border-gray-300 dark:border-gray-700 shadow-sm focus:ring-2 focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-800 dark:text-white"
-                :class="{ 'border-red-500': form.errors.phone }" />
-              <div v-if="form.errors.phone" class="mt-1 text-sm text-red-600 dark:text-red-400">
-                {{ form.errors.phone }}
+                :class="{ 'border-red-500': form.errors.email }" />
+              <div v-if="form.errors.email" class="mt-1 text-sm text-red-600 dark:text-red-400">
+                {{ form.errors.email }}
               </div>
             </div>
 
@@ -120,7 +120,7 @@ defineProps({
 const showPassword = ref(false)
 
 const form = useForm({
-  phone: '',
+  email: '',
   password: '',
   remember: false,
 })

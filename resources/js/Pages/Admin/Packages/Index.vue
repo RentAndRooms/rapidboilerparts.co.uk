@@ -24,15 +24,9 @@
                                             Name</th>
                                         <th scope="col"
                                             class="px-6 py-4 text-left text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                                            Items</th>
+                                            Description</th>
                                         <th scope="col"
-                                            class="px-6 py-4 text-left text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider w-32">
-                                            Branch</th>
-                                        <th scope="col"
-                                            class="px-6 py-4 text-left text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider w-32">
-                                            Category</th>
-                                        <th scope="col"
-                                            class="px-6 py-4 text-left text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider w-32">
+                                            class="px-6 py-4 text-left text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                                             Price</th>
                                         <th scope="col"
                                             class="px-6 py-4 text-left text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider w-40">
@@ -45,32 +39,18 @@
                                         <td class="px-6 py-4">
                                             <div class="text-sm font-medium text-gray-900 dark:text-white">{{
                                                 pack.name }}</div>
-                                            <div class="text-sm text-gray-500 dark:text-gray-400">{{
-                                                pack.contact_number }}</div>
                                         </td>
                                         <td class="px-6 py-4">
-                                            <div class="flex flex-wrap gap-2">
-                                                <span v-for="item in pack.foods" :key="item.id"
-                                                    class="bg-gray-100 text-green-600 px-2 py-1 rounded">
-                                                    {{ item.name }}
-                                                </span>
-                                            </div>
+                                            <div class="text-sm font-medium text-gray-900 dark:text-white">{{
+                                                pack.description }}</div>
                                         </td>
                                         <td class="px-6 py-4">
-                                            <div
-                                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-sm bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
-                                                {{ pack.branch.name }}
-                                            </div>
-                                        </td>
-                                        <td class="px-6 py-4">
-                                            <p>{{ pack.category.name }}</p>
-                                        </td>
-                                        <td class="px-6 py-4">
-                                            <p>{{ pack.base_price }}</p>
+                                            <div class="text-sm font-medium text-gray-900 dark:text-white">{{
+                                                pack.price }}</div>
                                         </td>
                                         <td class="px-6 py-4">
                                             <div class="flex items-center space-x-4">
-                                                <Link :href="route('admin.package.edit', pack.id)"
+                                                <Link :href="route('admin.package.edit', pack)"
                                                     class="inline-flex items-center px-3 py-1.5 bg-indigo-50 hover:bg-indigo-100 active:bg-indigo-200 dark:bg-indigo-900/50 dark:hover:bg-indigo-800/50 text-indigo-600 dark:text-indigo-300 rounded-md transition-colors duration-200">
                                                 <i class="fas fa-edit text-xs mr-1.5"></i>
                                                 <span>Edit</span>
